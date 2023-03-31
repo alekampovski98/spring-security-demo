@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Log in</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #3e3e3e;
+      color: white;
+    }
+    .authenticated {
+      margin-top: 10px;
+    }
+    .authenticated a {
+      text-decoration: none;
+      color: white;
+      font-size: 20px;
+    }
+
+    .authenticated a:hover {
+      color: dodgerblue;
+    }
+  </style>
+</head>
+<body class="vsc-initialized">
+<div class="container">
+  <form class="form-signin" method="post" action="/login">
+    <h2 class="form-signin-heading">Log in here</h2>
+    <p>
+      <label for="username" class="sr-only">Username</label>
+      <input type="text" id="username" name="username" class="form-control" placeholder="Username" required=""
+             autofocus="" data-keeper-lock-id="k-iawepn4c2qt">
+      <keeper-lock class="focus-visible keeper-lock-disabled" tabindex="0" id="k-iawepn4c2qt"
+                   aria-label="Open Keeper Popup" role="button"
+                   style="background-image: url(&quot;chrome-extension://bfogiafebfohielmmehodmfbbebbbpei/images/ico-field-fill-lock-grey.svg&quot;) !important; background-size: 16px 16px !important; cursor: pointer !important; width: 16px !important; position: absolute !important; opacity: 1 !important; margin-top: auto !important; min-width: 16px !important; top: 113.188px; left: 972px; z-index: 1; padding: 0px; height: 16px !important; animation-name: none;"></keeper-lock>
+    </p>
+    <p>
+      <label for="password" class="sr-only">Password</label>
+      <input type="password" id="password" name="password" class="form-control" placeholder="Password" required=""
+             data-keeper-lock-id="k-jybw2r1f0ff">
+      <keeper-lock class="focus-visible keeper-lock-disabled" tabindex="0" id="k-jybw2r1f0ff"
+                   aria-label="Open Keeper Popup" role="button"
+                   style="background-image: url(&quot;chrome-extension://bfogiafebfohielmmehodmfbbebbbpei/images/ico-field-fill-lock-grey.svg&quot;) !important; background-size: 16px 16px !important; cursor: pointer !important; width: 16px !important; position: absolute !important; opacity: 0 !important; margin-top: auto !important; min-width: 16px !important; top: 171.188px; left: 972px; z-index: 1; padding: 0px; height: 16px !important;"></keeper-lock>
+    </p>
+    <p>
+      <label><input type="checkbox" id="remember-me" name="remember-me"/> Remember me?</label>
+    </p>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+    <div class="authenticated">
+    <a href="/authenticated"> only for authenticated users!</a>
+    </div>
+  </form>
+</div>
+<keeper-positionable-popup id="keeper-extension-popup" name="showLoggedInKeeper"
+                           style="z-index: 2147483647 !important; height: 168px; width: 330px !important; position: fixed !important; opacity: 1 !important; clip-path: none !important; clip: auto !important; mask: none !important; color-scheme: normal !important; visibility: visible; margin-right: 0px; margin-top: 0px; top: 0px; right: 0px;">
+  <keeper-draggable-element
+          style="width: 237.6px; height: 47px; margin-top: 10px; margin-left: 10px; display: block; cursor: -webkit-grab; direction: ltr; margin-right: 0px; left: 0px; z-index: 1; position: absolute;"></keeper-draggable-element>
+  <iframe src="chrome-extension://bfogiafebfohielmmehodmfbbebbbpei/content_scripts/prompt/prompt.html"
+          allow="clipboard-read; clipboard-write"
+          style="position: absolute !important; top: 0px !important; left: 0px !important; height: 100% !important; margin: 0px !important; padding: 0px !important; display: block !important; width: 100% !important;"></iframe>
+</keeper-positionable-popup>
+</body>
+</html>
